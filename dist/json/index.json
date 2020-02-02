@@ -1,0 +1,20 @@
+{
+    "banner":[
+        {
+            "id":"0",
+            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_cnyle_20200108.jpg"
+        },
+        {
+            "id":"1",
+            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_redpower_20200116.jpg"
+        },        
+        {
+            "id":"2",
+            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_lancome_20200116.jpg"
+        },        
+        {
+            "id":"3",
+            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_liverene_20200116.jpg"
+        }   
+    ]
+}

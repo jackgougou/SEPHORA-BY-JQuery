@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "491508",
+      "name": "v",
+      "font_class": "v",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "904046",
+      "name": "感叹号(1)",
+      "font_class": "gantanhao1",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "1105010",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    }
+  ]
+}
