@@ -58,30 +58,111 @@ define(["jquery"],function($){
             success:function(arr){
                 // console.log(arr)
                 var str1 = arr.banner;
-                console.log(str1)
-                for(i = str1.length -1 ;i >=0 ;i--){
-                    var node = $(`<a href=""><img src="${str1[i].img}"></a>`);
+                // console.log(str1)
+                for(i = 0  ;i < str1.length ;i++){
+                    var node = $(`<a href="#"><img src="${str1[i].img}"></a>`);
                     node.appendTo($(".bannerBox"));
                 }
+                
+                bannerFade()  //轮播图特效
             },
             error:function(msg){
                 alert("banner图片加载失败" + msg)
             }
         })
-        // banner图函数
+        
+    
+    }
+    function bannerFade(){
+        //淡入淡出的banner图
         var iNow = 0;
-        var imgLength = $(".bannerBox a").length;
-        console.log($(".bannerBox a").size())
-        var timer = setInterval(time,2000)
+        var imgLength = $(".bannerBox a").size();
+        var timer = setInterval(time,4000)
         function time(){
             iNow++;
             if(iNow == imgLength){
-                n = 0;
+                iNow = 0;
+
             }
+            for(var i=0; i<imgLength; i++) {
+                $(".bannerBox a").eq(i).find("img").fadeTo(0,0)
+
+            }
+            $(".bannerBox a").eq((iNow)).find("img").delay(50).stop(true).fadeTo(500,1)  
+            $("#img-num li").removeClass("active")
+            $("#img-num li").eq(iNow).addClass("active")
+
         }
+        // 
+        //设置点击切换效果 (右)
+        var rightSide ;
+        $(".bannerAllBox").on("click","#img-right",function(){
+            for (var i = 0; i < imgLength; i++) 
+            {   
+                if ($(".bannerBox a").eq(i).find("img").css("opacity") != '0') 
+                {
+                    // 获取当前图片显示的下标
+                    rightSide = i;
+                }
+                
+            }
+            // if(rightSide == 3  ) 
+            // {
+            //     rightSide = 3;
+            // }
+            iNow = (rightSide);
+            time();
+        })
+        //设置点击切换效果 (左)
+        var leftSide ;
+        $(".bannerAllBox").on("click","#img-left",function(){
+            for (var i = 0; i < imgLength; i++) 
+            {   
+                if ($(".bannerBox a").eq(i).find("img").css("opacity") != '0') 
+                {
+                    // 获取当前图片显示的下标
+                    leftSide = i;
+                }
+
+            }
+            if(leftSide == 0){
+                leftSide = 4;
+            }
+            iNow = (leftSide - 2);
+            time();
+        })
+        // 移入悬停，移出继续
+        $(".bannerAllBox").mouseenter(function(){
+            clearInterval(timer);
+        })
+        $(".bannerAllBox").mouseleave(function(){
+
+            timer = setInterval(time,4000);
+
+        })
+        // 下标
+        var liLeagth = $("#img-num li").size();
+        for(var i= 0; i<liLeagth;i++){
+            (function(i){
+                $("#img-num li").eq(i).click(function(){
+                    // $("#img-num li").removeClass("active")
+                    // $(this).addClass("active")
+                    console.log(i)
+                    iNow = i - 1;
+                    time()
+                })
+            })(i)
+           
+        }
+    }
+    function sideBar(){
+
+    }
+    function sideBarAction(){
+
     }
     return {
         top:top,
-        banner:banner
+        banner:banner,
     }
 })

@@ -2,7 +2,7 @@
     "banner":[
         {
             "id":"0",
-            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_cnyle_20200108.jpg"
+            "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_vdaygifting_20200130.gif"
         },
         {
             "id":"1",
@@ -16,5 +16,15 @@
             "id":"3",
             "img":"https://ssl1.sephorastatic.cn/wcsfrontend/campaign/campaign_img/2020/01/banner/hp_liverene_20200116.jpg"
         }   
-    ]
+    ],
+    "sideBar":[{
+        "id":"0",
+        "title":"功效",
+        "title1":"保湿补水",
+        "title2":"补妆修容",
+        "link":[{
+            "id":"0",
+            "title":""
+        }]
+    },{}]
 }

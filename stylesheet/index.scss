@@ -332,6 +332,7 @@ $width:1190px;
                 margin-left: 15px;
                 font-size: 16px;
             }
+            
         }
         .btb2{
             padding-left:40px;
@@ -344,6 +345,9 @@ $width:1190px;
                 padding-top:12px;
                 a{
                     font-size:16px;
+                }
+                a:hover{
+                    color:red;
                 }
             }
         }
@@ -362,21 +366,85 @@ $width:1190px;
 .banner{
     width:100%;
     height:400px;
-    .bannerBox{
+    position: relative;
+    .bannerAllBox{
         height:400px;
         width:$width;
         margin: 0 auto;
         position: relative;
-        // overflow: hidden;
-        a{
-            display: block;
+        .bannerBox{
             height:400px;
-            width:$width; 
-            position: absolute;       
+            width:$width;
+            position: relative;
+            // overflow: hidden;
+            a{
+                display: block;
+                height:400px;
+                width:$width; 
+                position: absolute;  
+    
+            }
+            a:nth-child(1) img{
+                opacity: 1;
+            }
+            img{
+                vertical-align: middle;
+                width:100%;
+                height:100%;
+                opacity: 0;
+            }
+            
         }
-        img{
-            vertical-align: middle;
+        #img-left,#img-right{
+            position: absolute;
+            width: 40px;
+            height: 100px;
+            border-radius: 6px;
+            background-color: gray;
+            opacity: 0.6;
+            cursor: pointer;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            // display: none;
         }
+    
+        #img-left {
+            left: 242px;
+            top: 150px;
+        }
+
+        #img-right {
+            right: 1px;
+            top:150px ;
+        }
+        #img-num{
+            width:550px;
+            height:20px;
+            position: absolute;
+            bottom:1px;
+            left:440px;
+
+            li{
+                width:100px;
+                height:20px;
+                float:left;
+                margin-left:20px;
+                border-top: 5px solid rgb(221, 221, 221);
+                list-style-type:none;
+                cursor: pointer;
+            }
+            .num-one{
+                margin-left:0px;
+            }
+            .active{
+                border-top: 5px solid rgb(92, 168, 56);
+
+            }
+        }
+        
     }
+    
 
 }
